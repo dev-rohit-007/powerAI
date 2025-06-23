@@ -6,12 +6,8 @@
 xcuserdata/
 
 ## Xcode Patch
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcworkspace/contents.xcworkspacedata
-/*.gcno
-**/xcshareddata/WorkspaceSettings.xcsettings
+*.xcodeproj
+*.xcworkspace
 
 ## App packaging
 *.ipa
@@ -40,18 +36,7 @@ playground.xcworkspace
 #
 # Pods/
 
-# CMake
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
+# Build directories
 build/
 DerivedData/
 

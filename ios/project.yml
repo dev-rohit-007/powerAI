@@ -58,20 +58,9 @@ targets:
     scheme:
       environmentVariables:
         SWIFT_DEBUG_LOGGING: YES
-      testTargets:
-        - PowerAITests
       profile:
         config: Release
       analyze:
         config: Debug
       archive:
         config: Release
-
-# Optional test target configuration
-#  PowerAITests:
-#    type: bundle.unit-test
-#    platform: iOS
-#    sources:
-#      - path: Tests
-#    dependencies:
-#      - target: PowerAI
