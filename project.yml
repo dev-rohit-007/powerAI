@@ -1,0 +1,57 @@
+name: PowerAI
+options:
+  bundleIdPrefix: com.powerai
+  deploymentTarget:
+    iOS: 16.0
+  xcodeVersion: "14.0"
+  indentWidth: 2
+  tabWidth: 2
+  usesTabs: false
+
+settings:
+  base:
+    DEVELOPMENT_TEAM: "" # Your team ID here
+    SWIFT_VERSION: 5.0
+
+targets:
+  PowerAI:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+        excludes:
+          - "*.plist"
+      - path: Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.powerai.app
+        INFOPLIST_FILE: Sources/Info.plist
+        TARGETED_DEVICE_FAMILY: "1,2" # Universal (iPhone & iPad)
+    info:
+      path: Sources/Info.plist
+      properties:
+        CFBundleName: PowerAI
+        CFBundleDisplayName: PowerAI
+        CFBundlePackageType: APPL
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        LSRequiresIPhoneOS: true
+        UIRequiredDeviceCapabilities:
+          - armv7
+        UIApplicationSupportsIndirectInputEvents: true

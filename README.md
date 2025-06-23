@@ -1,29 +1,29 @@
-# PowerAI - iOS Project with CMake
+# PowerAI - iOS Project with XcodeGen
 
-This project demonstrates how to set up an iOS application using CMake and Swift in Zed IDE. It provides a basic foundation for iOS development with a modern build system setup.
+This project demonstrates how to set up an iOS application using XcodeGen and Swift in Zed IDE. It provides a basic foundation for iOS development with a modern project generation setup.
 
 ## Project Structure
 
 ```
 powerAI/
 ├── ios/
-│   ├── CMakeLists.txt
-│   ├── Info.plist
-│   ├── Sources/
-│   │   ├── AppDelegate.swift
-│   │   ├── SceneDelegate.swift
-│   │   └── ViewController.swift
-│   └── Resources/
-│       ├── Assets.xcassets/
-│       ├── LaunchScreen.storyboard
-│       └── Main.storyboard
+│   ├── project.yml
+│   └── App/
+│       ├── Info.plist
+│       ├── AppDelegate.swift
+│       ├── SceneDelegate.swift
+│       ├── ViewController.swift
+│       └── Resources/
+│           ├── Assets.xcassets/
+│           ├── LaunchScreen.storyboard
+│           └── Main.storyboard
 └── .gitignore
 ```
 
 ## Prerequisites
 
 - macOS with Xcode 16 or later
-- CMake 3.26 or later
+- XcodeGen (`brew install xcodegen`)
 - Zed IDE
 - Git
 
@@ -39,15 +39,15 @@ cd powerAI
 
 ### 2. Creating Project Files
 
-1. **CMake Configuration**
-   - Created `ios/CMakeLists.txt` with:
+1. **XcodeGen Configuration**
+   - Created `ios/project.yml` with:
      - iOS platform settings
      - Swift language configuration
      - Bundle identifier and version
      - Target properties and build settings
 
 2. **Source Files**
-   - Created basic Swift files in `ios/Sources/`:
+   - Created basic Swift files in `ios/App/`:
      ```swift
      // AppDelegate.swift - Application entry point
      // SceneDelegate.swift - Scene lifecycle management
@@ -55,24 +55,25 @@ cd powerAI
      ```
 
 3. **Resource Files**
-   - Set up `ios/Resources/` directory with:
+   - Set up `ios/App/Resources/` directory with:
      - Assets catalog
      - Storyboard files
 
 4. **Configuration Files**
    - Created `Info.plist` with required iOS app settings
-   - Added `.gitignore` for iOS/Xcode/CMake specific files
+   - Added `.gitignore` for iOS/Xcode specific files
 
 ### 3. Building the Project
 
 ```bash
+# Navigate to ios directory
+cd ios
+
 # Generate Xcode project
-mkdir -p ios/build
-cd ios/build
-cmake -G Xcode ..
+xcodegen generate
 
 # Open in Xcode
-open PowerAI_iOS.xcodeproj
+open PowerAI.xcodeproj
 ```
 
 ### 4. GitHub Repository Setup
@@ -115,7 +116,7 @@ git push -u origin main
 ## Development Tools Used
 
 - **Zed IDE**: Primary development environment
-- **CMake**: Build system generation
+- **XcodeGen**: Project generation
 - **Xcode**: iOS SDK and toolchain
 - **Git**: Version control
 - **GitHub**: Repository hosting
