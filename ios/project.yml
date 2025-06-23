@@ -21,6 +21,10 @@ targets:
     platform: iOS
     sources:
       - path: App
+        excludes:
+          - "Resources/**"
+      - path: App/ViewControllers
+      - path: App/Resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.powerai.app
